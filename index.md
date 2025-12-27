@@ -1,9 +1,26 @@
-# 欢迎来到科技小V的个人网站！
+---
+layout: default
+title: "教程目录"
+---
 
-这是我的 GitHub Pages 网站。在这里你可以找到我分享的内容和教程。
+<!-- 顶部内容 -->
+<header>
+  <a href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV">科技小V YouTube 频道入口</a>
+</header>
 
-- [教程1](ceshi.md)
-- [教程2](README.md)
+<h1>教程目录</h1>
 
-## 关于我
-我是科技小V，一个致力于分享技术教程和工具的博主。
+<!-- 教程目录列表 -->
+<ul>
+  {% assign tutorials = site.pages | where: "category", "tutorial" %}
+  {% for page in tutorials %}
+    {% if page.title and page.url != "/" %}
+      <li><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+<!-- 底部内容 -->
+<footer>
+  <p>科技小V · 教程中心</p>
+</footer>
