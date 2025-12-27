@@ -3,55 +3,77 @@ layout: default
 title: "教程目录"
 ---
 
-<!-- 页面专用样式：标题与列表字号按你的要求设置 -->
+<!-- 页面专用样式（表格版目录） -->
 <style>
-  .toc-container .toc-heading {
-    font-size: 22px;       /* 二级标题：20-22px，设为22px */
+  .toc-table-container { max-width: 980px; margin: 36px auto; }
+  .toc-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .toc-table thead th {
+    text-align: left;
+    font-size: 22px;            /* 二级标题：22px */
     font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 1.5rem;
+    padding: 14px 12px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  .toc-table tbody td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: middle;
   }
 
-  .toc-container .toc-list {
-    list-style: disc;
-    margin: 0 0 1.75rem 1.25rem;
-    padding: 0;
-  }
-
-  .toc-container .toc-list li {
-    margin: 0 0 0.9rem 0;
-    line-height: 1.6;      /* 适度行高，阅读舒适 */
-  }
-
-  .toc-container .toc-list li a {
-    font-size: 16px;       /* 列表项：14-16px，设为16px */
-    line-height: 1.6;
-    text-decoration: none;
+  /* 列表项链接样式（教程名称） */
+  .toc-table tbody td a {
+    font-size: 16px;            /* 列表项：16px */
+    line-height: 1.6;           /* 行高 1.6，阅读舒适 */
     color: inherit;
+    text-decoration: none;
+  }
+  .toc-table tbody td a:hover {
+    text-decoration: underline;
   }
 
-  .toc-container .toc-list li a:hover { text-decoration: underline; }
+  /* 当没有任何教程时显示文字 */
+  .toc-empty { padding: 20px 12px; color: #888; }
 
+  /* 响应式：窄屏时保持可读性 */
   @media (max-width: 640px) {
-    .toc-container .toc-heading { font-size: 20px; }
-    .toc-container .toc-list li a { font-size: 14px; }
-    .toc-container .toc-list li { margin-bottom: 0.75rem; line-height: 1.4; }
+    .toc-table-container { padding: 0 12px; }
+    .toc-table thead th { font-size: 20px; }
+    .toc-table tbody td a { font-size: 14px; }
   }
 </style>
 
-<div class="toc-container">
-  <h1 class="toc-heading">教程目录</h1>
-
-  <ul class="toc-list">
-    {% assign tutorials = site.pages | where: "category", "tutorial" | sort: "title" %}
-    {% for t in tutorials %}
-      {% if t.url != "/" %}
-        {% if t.external_url %}
-          <li><a href="{{ t.external_url }}" target="_blank" rel="noopener noreferrer">{{ t.title }}</a></li>
-        {% else %}
-          <li><a href="{{ t.url | relative_url }}">{{ t.title }}</a></li>
+<div class="toc-table-container">
+  <table class="toc-table" role="table" aria-label="教程目录表">
+    <thead>
+      <tr>
+        <th>教程目录</th> <!-- 第一行标题：只显示“教程目录” -->
+      </tr>
+    </thead>
+    <tbody>
+      {% comment %}
+        获取 category: tutorial 的页面并按日期排序（最新在上）
+        说明：请确保每篇教程的 Front Matter 包含 date: 字段（例如 2025-12-23）
+      {% endcomment %}
+      {% assign tutorials = site.pages | where: "category", "tutorial" | sort: "date" | reverse %}
+      {% for t in tutorials %}
+        {% if t.url != "/" %}
+          <tr>
+            <td>
+              {% if t.external_url %}
+                <a href="{{ t.external_url }}" target="_blank" rel="noopener noreferrer">{{ t.title }}</a>
+              {% else %}
+                <a href="{{ t.url | relative_url }}">{{ t.title }}</a>
+              {% endif %}
+            </td>
+          </tr>
         {% endif %}
+      {% endfor %}
+
+      {% if tutorials == empty %}
+        <tr>
+          <td class="toc-empty">当前没有分类为 <code>tutorial</code> 的页面。</td>
+        </tr>
       {% endif %}
-    {% endfor %}
-  </ul>
+    </tbody>
+  </table>
 </div>
