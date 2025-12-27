@@ -1,24 +1,22 @@
 <header class="site-header" role="banner" aria-label="site header" style="border-top:0 !important;">
   <style>
-    /* 移除多余线条并保留通长底线 */
+    /* 移除多余短线并保留通长底线 */
     .site-header, .site-header::before, .site-header::after,
     .site-header-inner, .site-header-inner::before, .site-header-inner::after {
       border-top: 0 !important;
       box-shadow: none !important;
       background-repeat: no-repeat !important;
     }
+    /* 通长底线显示在 header 本身 */
     .site-header { border-bottom: 1px solid #e6e6e6; }
     .site-header .wrapper { border-bottom: 0 !important; }
 
-    /* 隐藏可能在链接或标题上产生短线的伪元素 */
+    /* 隐藏可能导致短线的伪元素 */
     .site-title a::after,
     .site-title::after,
     .top-links a::after,
     .top-links::before,
-    .top-links::after {
-      display: none !important;
-      content: none !important;
-    }
+    .top-links::after { display: none !important; content: none !important; }
 
     /* 移除链接自身的下边框/阴影 */
     .top-links a,
@@ -31,32 +29,38 @@
       color: inherit !important;
     }
 
-    /* —— 关键部分 ——
-       把顶部链接字体设置为与教程目录标题（.toc-heading）相同的大小
-       如果 index.html 使用 font-size:2rem 作为 .toc-heading，这里也用 2rem。
-       如需改为与列表项相同（1.25rem），把 2rem 改为 1.25rem 即可。 */
-    .top-links .home-link,
-    .top-links .toc-link {
-      font-size: 2rem !important;   /* 与教程目录标题一致 */
-      line-height: 1.2 !important;
+    /* 字体尺寸（按你的规格要求） */
+    .top-links .home-link { /* 主入口：Largest (28px) */
+      font-size: 28px !important;
+      line-height: 1.1 !important;
       font-weight: 700 !important;
-      padding-bottom: 10px;         /* 与底线保持合理间距 */
+      padding-bottom: 10px;
     }
 
-    /* 移动端适配：窄屏时缩小字号并垂直排列 */
+    .top-links .toc-link { /* 辅助按钮：18px */
+      font-size: 18px !important;
+      line-height: 1.1 !important;
+      font-weight: 600 !important;
+      padding-bottom: 10px;
+    }
+
+    /* 移动端降级 */
     @media (max-width: 640px) {
       .top-links { flex-direction: column; gap: 8px; align-items: stretch; }
       .top-links a { text-align: center; }
-      .top-links .home-link, .top-links .toc-link { font-size: 1.2rem !important; padding-bottom: 6px; }
+      .top-links .home-link { font-size: 20px !important; padding-bottom:8px; }
+      .top-links .toc-link { font-size: 16px !important; padding-bottom:6px; }
     }
   </style>
 
   <div class="wrapper">
     <div class="top-links" style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
+      <!-- 左侧：主入口（最大） -->
       <a class="home-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">
         YouTube 频道入口
       </a>
 
+      <!-- 右侧：返回目录（辅助按钮） -->
       <a class="toc-link" href="{{ site.baseurl | default: '/' }}">
         返回目录
       </a>
