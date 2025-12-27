@@ -1,10 +1,13 @@
 <header class="site-header" role="banner">
   <div class="wrapper site-header-inner">
-    <h1 class="site-title">
-      <!-- 把站点标题的链接改为你的 YouTube 主页（在新标签打开） -->
-      <a href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">{{ site.title }}</a>
+    <h1 class="site-title" style="display:flex; align-items:center; gap:12px; margin:0;">
+      <!-- 频道入口：在新标签打开 -->
+      <a class="youtube-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">{{ site.title }}</a>
+
+      <!-- 返回目录：指向站点根（支持 site.baseurl），在同一标签打开 -->
+      <a class="return-link" href="{{ site.baseurl | default: '/' }}" style="font-size:0.85em; color:#2c7be5; text-decoration:underline;">返回目录</a>
     </h1>
 
-    <!-- 如果你还想保留主题原有的导航或搜索，可以按需添加，这里保留最简单的标题覆盖 -->
+    <!-- 如需保留主题原有的导航/按钮，可以在这里继续添加 -->
   </div>
 </header>
