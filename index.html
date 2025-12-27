@@ -7,21 +7,45 @@
     <link rel="stylesheet" href="styles.css"> <!-- 引用外部CSS文件 -->
 </head>
 <body>
-    <main> <!-- 添加一个main标签，包含页面的主要内容 -->
+    <main> <!-- 主要内容部分 -->
         <header>
             <h1>科技小V YouTube频道</h1>
             <p>在这里，我将分享各种实用的编程教程。</p>
         </header>
 
-        <section>
-            <h2>教程目录>将ia>
-            <p>这是我的第一个HTML教程，讲解HTML的基本标签。</p>
-            <a href="https://www.example.com" target="_blank">点击这里查看更多教程</a>
-        </section>
+        <!-- 目录标题和空的列表容器 -->
+        <h2 id="directory-title">教程目录</h2>
+        <ul id="tutorial-list">
+            <!-- 目录内容将由JavaScript动态生成 -->
+        </ul>
 
         <footer>
             <p>版权所有 &copy; 2025 我的教程网站</p>
         </footer>
     </main>
+
+    <!-- JavaScript代码，动态生成目录 -->
+    <script>
+        // 定义一个数组，存储所有教程的标题和链接
+        const tutorials = [
+            { title: "HTML基础教程", link: "html-tutorial.html" },
+            { title: "CSS基础教程", link: "css-tutorial.html" },
+            { title: "JavaScript基础教程", link: "js-tutorial.html" },
+            // 更多教程可以继续添加
+        ];
+
+        // 获取教程目录的容器
+        const tutorialList = document.getElementById("tutorial-list");
+
+        // 遍历教程数组并创建列表项
+        tutorials.forEach(tutorial => {
+            const listItem = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = tutorial.link;
+            link.textContent = tutorial.title;
+            listItem.appendChild(link);
+            tutorialList.appendChild(listItem);
+        });
+    </script>
 </body>
 </html>
