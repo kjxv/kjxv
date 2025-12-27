@@ -1,13 +1,14 @@
 <header class="site-header" role="banner">
-  <div class="wrapper site-header-inner">
-    <h1 class="site-title" style="display:flex; align-items:center; gap:12px; margin:0;">
-      <!-- 频道入口：在新标签打开 -->
-      <a class="youtube-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">{{ site.title }}</a>
-
-      <!-- 返回目录：指向站点根（支持 site.baseurl），在同一标签打开 -->
-      <a class="return-link" href="{{ site.baseurl | default: '/' }}" style="font-size:0.85em; color:#2c7be5; text-decoration:underline;">返回目录</a>
+  <div class="wrapper site-header-inner" style="display:flex; align-items:center; justify-content:center; gap:12px;">
+    <!-- 只显示一个中心标题（可点击到首页），文本为“科技小V 文档中心” -->
+    <h1 class="site-title" style="margin:0; font-weight:400;">
+      <a href="{{ '/' | relative_url }}" style="color:inherit; text-decoration:none;">科技小V 文档中心</a>
     </h1>
 
-    <!-- 如需保留主题原有的导航/按钮，可以在这里继续添加 -->
+    <!-- 频道入口 和 返回目录 放在标题右侧（可删/调整） -->
+    <nav style="position:absolute; right:16px; top:16px;">
+      <a class="youtube-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">频道入口</a>
+      <a class="return-link" href="{{ site.baseurl | default: '/' }}">返回目录</a>
+    </nav>
   </div>
 </header>
