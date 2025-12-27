@@ -1,10 +1,38 @@
 <header class="site-header" role="banner" aria-label="site header" style="border-top:0 !important;">
-  <!-- 覆盖并移除可能的伪元素/上边线 -->
   <style>
-    /* 强制隐藏 header 的前置伪元素或顶部边线（覆盖主题样式） */
-    .site-header, .site-header::before, .site-header-inner { border-top: 0 !important; box-shadow: none !important; }
-    .site-header::before { display: none !important; }
-    /* 调整链接字体更大一号；保证左右对齐与 wrapper 一致 */
+    /* 彻底移除 header 顶部/中间多余线（覆盖主题任何伪元素或边框） */
+    .site-header, .site-header::before, .site-header::after,
+    .site-header-inner, .site-header-inner::before, .site-header-inner::after {
+      border-top: 0 !important;
+      border-bottom: 0 !important;
+      box-shadow: none !important;
+      background-repeat: no-repeat !important;
+    }
+
+    /* 隐藏可能在链接或标题上产生短下划线的伪元素 */
+    .site-title a::after,
+    .site-title::after,
+    .top-links a::after,
+    .top-links::before,
+    .top-links::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    /* 强制移除链接自身的下边框或下划线样式（短线通常是 border-bottom） */
+    .top-links a,
+    .top-links .home-link,
+    .top-links .toc-link {
+      border: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      text-decoration: none !important;
+    }
+
+    /* 保留并渲染一条全宽的底部分隔线（在 wrapper 上） */
+    .site-header .wrapper { border-bottom: 1px solid #e6e6e6; }
+
+    /* 放大文字样式（按你之前要求）并兼容移动端 */
     .top-links .home-link,
     .top-links .toc-link {
       font-size: 1.5rem !important;
@@ -13,21 +41,20 @@
       color: inherit !important;
       text-decoration: none !important;
     }
-    /* 保持移动端也能正常显示：窄屏下堆叠 */
+
     @media (max-width: 640px) {
       .top-links { flex-direction: column; gap: 8px; align-items: stretch; }
       .top-links a { text-align: center; }
+      .top-links .home-link, .top-links .toc-link { font-size: 1.2rem !important; }
     }
   </style>
 
-  <div class="wrapper" style="border-bottom: 1px solid #e6e6e6;">
+  <div class="wrapper">
     <div class="top-links" style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
-      <!-- 左侧：科技小V 首页入口（指向 YouTube，在新标签打开） -->
       <a class="home-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">
         科技小V 首页入口
       </a>
 
-      <!-- 右侧：返回目录（站内） -->
       <a class="toc-link" href="{{ site.baseurl | default: '/' }}">
         返回目录
       </a>
