@@ -1,15 +1,22 @@
 <header class="site-header" role="banner" aria-label="site header" style="border-top:0 !important;">
   <style>
-    /* 彻底移除 header 顶部/中间多余线（覆盖主题任何伪元素或边框） */
+    /* 移除任何多余的顶线/伪元素 */
     .site-header, .site-header::before, .site-header::after,
     .site-header-inner, .site-header-inner::before, .site-header-inner::after {
       border-top: 0 !important;
-      border-bottom: 0 !important;
       box-shadow: none !important;
       background-repeat: no-repeat !important;
     }
 
-    /* 隐藏可能在链接或标题上产生短下划线的伪元素 */
+    /* 在 header 本身添加通长的底部分隔线（保证跨整页） */
+    .site-header {
+      border-bottom: 1px solid #e6e6e6;
+    }
+
+    /* 移除 wrapper 上可能存在的短下划线（只在 header 显示通长线） */
+    .site-header .wrapper { border-bottom: 0 !important; }
+
+    /* 隐藏可能出现在链接或标题上的伪元素导致短线 */
     .site-title a::after,
     .site-title::after,
     .top-links a::after,
@@ -19,7 +26,7 @@
       content: none !important;
     }
 
-    /* 强制移除链接自身的下边框或下划线样式（短线通常是 border-bottom） */
+    /* 移除链接自身的下边框/阴影 */
     .top-links a,
     .top-links .home-link,
     .top-links .toc-link {
@@ -29,10 +36,7 @@
       text-decoration: none !important;
     }
 
-    /* 保留并渲染一条全宽的底部分隔线（在 wrapper 上） */
-    .site-header .wrapper { border-bottom: 1px solid #e6e6e6; }
-
-    /* 放大文字样式（按你之前要求）并兼容移动端 */
+    /* 链接字体样式（保持你之前的要求：放大一号） */
     .top-links .home-link,
     .top-links .toc-link {
       font-size: 1.5rem !important;
@@ -40,12 +44,13 @@
       font-weight: 700 !important;
       color: inherit !important;
       text-decoration: none !important;
+      padding-bottom: 10px; /* 给链接与底线留出垂直间距，让线在链接下方整齐显示 */
     }
 
     @media (max-width: 640px) {
       .top-links { flex-direction: column; gap: 8px; align-items: stretch; }
       .top-links a { text-align: center; }
-      .top-links .home-link, .top-links .toc-link { font-size: 1.2rem !important; }
+      .top-links .home-link, .top-links .toc-link { font-size: 1.2rem !important; padding-bottom: 6px; }
     }
   </style>
 
