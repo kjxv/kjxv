@@ -1,30 +1,15 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科技小V YouTube频道</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 引用外部CSS文件 -->
-</head>
-<body>
-    <main> <!-- 主要内容部分 -->
-        <header>
-            <h1>科技小V YouTube频道</h1>
-            <p>在这里，我将分享各种实用的编程教程。</p>
-        </header>
+---
+layout: default
+title: "教程目录"
+---
 
-        <!-- 目录标题和空的列表容器 -->
-        <h2 id="directory-title">教程目录</h2>
-        <ul id="tutorial-list">
-            <!-- 目录内容将由JavaScript动态生成 -->
-        </ul>
+# 教程目录
 
-        <footer>
-            <p>版权所有 &copy; 2025 我的教程网站</p>
-        </footer>
-    </main>
-
-    <!-- 引用外部的JavaScript文件 -->
-    <script src="scripts.js"></script>
-</body>
-</html>
+<ul>
+  {% assign tutorials = site.pages | where: "category", "tutorial" %}
+  {% for t in tutorials %}
+    {% if t.url != "/" %}
+      <li><a href="{{ site.baseurl }}{{ t.url | relative_url }}">{{ t.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
