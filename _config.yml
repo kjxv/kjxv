@@ -1,0 +1,6 @@
+title: 科技小V YouTube 频道入口
+theme: minima
+markdown: kramdown
+baseurl: "/kejixiaov"  # 仓库名称，确保链接正确
+header_pages:
+  - toc.md
