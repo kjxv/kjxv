@@ -3,7 +3,7 @@ const tutorials = [
     { title: "HTML基础教程", link: "html-tutorial.html" },
     { title: "CSS基础教程", link: "css-tutorial.html" },
     { title: "JavaScript基础教程", link: "js-tutorial.html" },
-    // 更多教程可以继续添加
+    { title: "苹果美国区账号注册方法教程", link: "apple-id-tutorial.html" } // 新增教程
 ];
 
 // 获取教程目录的容器
