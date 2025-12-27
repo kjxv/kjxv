@@ -3,42 +3,38 @@ layout: default
 title: "教程目录"
 ---
 
-<!-- 本页样式：增加目录与教程列表的行间距与上下间距，提升可读性 -->
+<!-- 页面专用样式：标题与列表字号按你的要求设置 -->
 <style>
   .toc-container .toc-heading {
-    font-size: 2rem;
+    font-size: 22px;       /* 二级标题：20-22px，设为22px */
     font-weight: 700;
-    line-height: 1.2;            /* 标题稍放松 */
-    margin: 0 0 1.5rem;          /* 标题与列表之间的距离增大 */
+    line-height: 1.2;
+    margin: 0 0 1.5rem;
   }
 
   .toc-container .toc-list {
     list-style: disc;
-    margin: 0 0 1.75rem 1.25rem; /* 列表与下方内容的间距也增大 */
+    margin: 0 0 1.75rem 1.25rem;
     padding: 0;
   }
 
-  /* 列表项：更大的行高与适当的下边距，避免拥挤 */
   .toc-container .toc-list li {
-    margin: 0 0 0.9rem 0;        /* 每项下方空隙 */
-    line-height: 1.6;            /* 行高设为 1.6，使多行也不拥挤 */
+    margin: 0 0 0.9rem 0;
+    line-height: 1.6;      /* 适度行高，阅读舒适 */
   }
 
   .toc-container .toc-list li a {
-    font-size: 1.25rem;          /* H2 近似大小 */
+    font-size: 16px;       /* 列表项：14-16px，设为16px */
     line-height: 1.6;
     text-decoration: none;
     color: inherit;
   }
 
-  .toc-container .toc-list li a:hover {
-    text-decoration: underline;
-  }
+  .toc-container .toc-list li a:hover { text-decoration: underline; }
 
-  /* 响应式：窄屏时适当缩小并保持良好间距 */
   @media (max-width: 640px) {
-    .toc-container .toc-heading { font-size: 1.6rem; margin-bottom: 1rem; }
-    .toc-container .toc-list li a { font-size: 1.05rem; }
+    .toc-container .toc-heading { font-size: 20px; }
+    .toc-container .toc-list li a { font-size: 14px; }
     .toc-container .toc-list li { margin-bottom: 0.75rem; line-height: 1.4; }
   }
 </style>
