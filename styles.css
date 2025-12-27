@@ -1,26 +1,46 @@
-/* 设置body的背景色和字体 */
+/* 使页面内容居中 */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* 设置背景色 */
-    margin: 0; /* 去除默认的边距 */
-    padding: 0; /* 去除默认的内边距 */
-    height: 100vh; /* 让 body 元素的高度占满整个视口 */
-    display: flex; /* 使用 flexbox 布局 */
-    justify-content: center; /* 水平居中 */
-    align-items: center; /* 垂直居中 */
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-/* 设置 header 和 footer 样式 */
-header, footer {
+/* 主要内容区域 */
+main {
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* 底部链接样式 */
+footer {
+    margin-top: 20px;
     text-align: center;
 }
 
-/* 让网页的主要内容（如section）也居中 */
-main {
-    width: 80%; /* 设置宽度 */
-    max-width: 1000px; /* 最大宽度 */
-    padding: 20px; /* 内边距 */
-    background-color: white; /* 背景色 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-    border-radius: 10px; /* 设置圆角 */
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 10px 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 16px;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
 }
