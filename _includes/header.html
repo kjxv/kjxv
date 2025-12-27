@@ -1,14 +1,19 @@
-<header class="site-header" role="banner">
-  <div class="wrapper site-header-inner" style="display:flex; align-items:center; justify-content:center; gap:12px;">
-    <!-- 只显示一个中心标题（可点击到首页），文本为“科技小V 文档中心” -->
-    <h1 class="site-title" style="margin:0; font-weight:400;">
-      <a href="{{ '/' | relative_url }}" style="color:inherit; text-decoration:none;">科技小V 文档中心</a>
-    </h1>
+<header class="site-header" role="banner" aria-label="site header">
+  <!-- 使用 theme 的 wrapper 宽度，这样链接左右边缘会与正文对齐 -->
+  <div class="wrapper" style="border-bottom: 1px solid #e6e6e6;">
+    <!-- 两个链接同一行，左右对齐 -->
+    <div class="top-links" style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
+      <!-- 左侧：科技小V 首页入口（指向 YouTube，在新标签打开） -->
+      <a class="home-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer"
+         style="font-size:1.25rem; line-height:1; font-weight:600; color:inherit; text-decoration:none;">
+        科技小V 首页入口
+      </a>
 
-    <!-- 频道入口 和 返回目录 放在标题右侧（可删/调整） -->
-    <nav style="position:absolute; right:16px; top:16px;">
-      <a class="youtube-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer" style="margin-right:12px;">频道入口</a>
-      <a class="return-link" href="{{ site.baseurl | default: '/' }}">返回目录</a>
-    </nav>
+      <!-- 右侧：返回目录（站内） -->
+      <a class="toc-link" href="{{ site.baseurl | default: '/' }}"
+         style="font-size:1.25rem; line-height:1; font-weight:600; color:inherit; text-decoration:none;">
+        返回目录
+      </a>
+    </div>
   </div>
 </header>
