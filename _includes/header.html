@@ -1,17 +1,34 @@
-<header class="site-header" role="banner" aria-label="site header">
-  <!-- 使用 theme 的 wrapper 宽度，这样链接左右边缘会与正文对齐 -->
+<header class="site-header" role="banner" aria-label="site header" style="border-top:0 !important;">
+  <!-- 覆盖并移除可能的伪元素/上边线 -->
+  <style>
+    /* 强制隐藏 header 的前置伪元素或顶部边线（覆盖主题样式） */
+    .site-header, .site-header::before, .site-header-inner { border-top: 0 !important; box-shadow: none !important; }
+    .site-header::before { display: none !important; }
+    /* 调整链接字体更大一号；保证左右对齐与 wrapper 一致 */
+    .top-links .home-link,
+    .top-links .toc-link {
+      font-size: 1.5rem !important;
+      line-height: 1 !important;
+      font-weight: 700 !important;
+      color: inherit !important;
+      text-decoration: none !important;
+    }
+    /* 保持移动端也能正常显示：窄屏下堆叠 */
+    @media (max-width: 640px) {
+      .top-links { flex-direction: column; gap: 8px; align-items: stretch; }
+      .top-links a { text-align: center; }
+    }
+  </style>
+
   <div class="wrapper" style="border-bottom: 1px solid #e6e6e6;">
-    <!-- 两个链接同一行，左右对齐 -->
     <div class="top-links" style="display:flex; justify-content:space-between; align-items:center; padding:12px 0;">
       <!-- 左侧：科技小V 首页入口（指向 YouTube，在新标签打开） -->
-      <a class="home-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer"
-         style="font-size:1.25rem; line-height:1; font-weight:600; color:inherit; text-decoration:none;">
+      <a class="home-link" href="https://www.youtube.com/@%E7%A7%91%E6%8A%80%E5%B0%8FV" target="_blank" rel="noopener noreferrer">
         科技小V 首页入口
       </a>
 
       <!-- 右侧：返回目录（站内） -->
-      <a class="toc-link" href="{{ site.baseurl | default: '/' }}"
-         style="font-size:1.25rem; line-height:1; font-weight:600; color:inherit; text-decoration:none;">
+      <a class="toc-link" href="{{ site.baseurl | default: '/' }}">
         返回目录
       </a>
     </div>
