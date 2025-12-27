@@ -3,19 +3,61 @@ layout: default
 title: "教程目录"
 ---
 
-# 教程目录
+<!-- 本页面专用样式：把“教程目录”设为一级标题大小，列表项设为二级标题大小，行高设为1 -->
+<style>
+  /* 容器限定，避免影响其它页面 */
+  .toc-container .toc-heading {
+    /* 近似 H1 大小并加粗（根据需要可调整为更大） */
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0 0 0.5rem;
+  }
 
-<ul>
-  {% assign tutorials = site.pages | where: "category", "tutorial" | sort: "title" %}
-  {% for t in tutorials %}
-    {% if t.url != "/" %}
-      {% if t.external_url %}
-        <!-- 如果页面 front matter 有 external_url，就跳到外部地址（新标签） -->
-        <li><a href="{{ t.external_url }}" target="_blank" rel="noopener noreferrer">{{ t.title }}</a></li>
-      {% else %}
-        <!-- 否则跳到站内页面（使用 relative_url 以确保 baseurl 正确） -->
-        <li><a href="{{ t.url | relative_url }}">{{ t.title }}</a></li>
+  .toc-container .toc-list {
+    list-style: disc;
+    margin: 0 0 1rem 1.25rem;
+    padding: 0;
+  }
+
+  /* 列表项文字样式：近似 H2 大小 */
+  .toc-container .toc-list li {
+    margin: 0 0 0.25rem 0;
+    line-height: 1; /* 行高设置为 1 */
+  }
+
+  .toc-container .toc-list li a {
+    font-size: 1.25rem; /* 近似 H2 */
+    line-height: 1;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* 可选：悬停下划线提示（不改变常态下的样式） */
+  .toc-container .toc-list li a:hover {
+    text-decoration: underline;
+  }
+
+  /* 移动端适配：当屏幕窄时稍微缩小字体，避免换行过多 */
+  @media (max-width: 640px) {
+    .toc-container .toc-heading { font-size: 1.5rem; }
+    .toc-container .toc-list li a { font-size: 1.1rem; }
+  }
+</style>
+
+<div class="toc-container">
+  <h1 class="toc-heading">教程目录</h1>
+
+  <ul class="toc-list">
+    {% assign tutorials = site.pages | where: "category", "tutorial" | sort: "title" %}
+    {% for t in tutorials %}
+      {% if t.url != "/" %}
+        {% if t.external_url %}
+          <li><a href="{{ t.external_url }}" target="_blank" rel="noopener noreferrer">{{ t.title }}</a></li>
+        {% else %}
+          <li><a href="{{ t.url | relative_url }}">{{ t.title }}</a></li>
+        {% endif %}
       {% endif %}
-    {% endif %}
-  {% endfor %}
-</ul>
+    {% endfor %}
+  </ul>
+</div>
