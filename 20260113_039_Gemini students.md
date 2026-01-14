@@ -20,7 +20,8 @@ Youtobe视频教程（完整版）： [跳转链接](https://www.youtube.com/wat
 - 第五：🥸非常重要，良好的心态！
 
   ## **其他相关**
-- 学生认证网址：[1KEY](https://batch.1key.me/)
+- 1KEY学生认证网址：[点击跳转](https://batch.1key.me/)
+  <br>
   提示（2026年1月14日）：作者已将1KEY转为了付费，价格5元＝5次成功机会，名额还是得抢，库存吃紧！）
 - 美国地址生成器：[点击跳转](https://usaddressgen.com)
 - VPS搭建教程：[点击跳转](https://www.youtube.com/watch?v=V7AN_wtpaDQ)
