@@ -20,9 +20,9 @@ Youtobe视频教程（完整版）： [跳转链接](https://www.youtube.com/wat
 - 第五：🥸非常重要，良好的心态！
 
   ## **其他相关**
-- 1KEY学生认证网址：[点击跳转](https://batch.1key.me/)
-  <br>
-  提示（2026年1月14日）：作者已将1KEY转为了付费，价格5元＝5次成功机会，名额还是得抢，库存吃紧！）
+- 1KEY学生认证网址，需要赞助（5元/5次）：[点击跳转](https://batch.1key.me/)
+- one.idkey学生认证网站（签到5天可以免费使用一次或者充值4元）：[点击跳转](https://one.idkey.cc/?ref=729999721)
+- TG机器人（SheerID Bot）（充值1美元获得使用权限）:[点击跳转](https://t.me/SheerID_Verification_bot?start=ref_2w2NvePCWn)
 - 美国地址生成器：[点击跳转](https://usaddressgen.com)
 - VPS搭建教程：[点击跳转](https://www.youtube.com/watch?v=V7AN_wtpaDQ)
   
