@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 👉Shadowrocket保姆级教程：免费下载+「懒人配置」让节点自动切换!  
+title: 👉（小火箭）Shadowrocket保姆级教程：免费下载+「懒人配置」让节点自动切换！  
 category: tutorial
 ---
 
 
-# **👉Shadowrocket保姆级教程：免费下载+「懒人配置」让节点自动切换!**  
+# **👉（小火箭）Shadowrocket保姆级教程：免费下载+「懒人配置」让节点自动切换！**  
 日期：2026.01.28
 
 <hr class="sep">
