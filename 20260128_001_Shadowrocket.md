@@ -8,7 +8,6 @@ category: tutorial
 # **👉（小火箭）Shadowrocket保姆级教程：免费下载+「懒人配置」让节点自动切换！**  
 日期：2026.01.28
 
-<hr class="sep">
 
 ## **视频教程**
 Youtobe视频教程（完整版）： [跳转链接]()
