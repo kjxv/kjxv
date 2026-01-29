@@ -10,7 +10,7 @@ category: tutorial
 <hr class="sep">
 
 ## **视频教程**
-Youtobe视频教程（完整版）： [跳转链接]()
+Youtobe视频教程（完整版）： [跳转链接](https://www.youtube.com/watch?v=-gTR97Wu1i8)
 
 ## **第一：下载、安装小火箭（Shadowrocket）**
 - 1.【免费方案】Toronto免费共享苹果ID网站：[点击跳转](https://idshare001.me/goso.html)
