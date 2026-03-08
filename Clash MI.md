@@ -1,11 +1,11 @@
 ---
 layout: default
-title: 🐱Clash MI  
+title: 🐱免费平替小火箭！Clash Mi 详细教程 | 一款软件全设备代理，智能分流设置全解析丨科学上网丨平替Shadowrocket  
 category: tutorial
 ---
 
 
-# **🐱Clash MI**  
+# **🐱免费平替小火箭！Clash Mi 详细教程 | 一款软件全设备代理，智能分流设置全解析丨科学上网丨平替Shadowrocket**  
 日期：2026.03.08
 <hr class="sep">
 
