@@ -13,8 +13,9 @@ category: tutorial
 Youtobe视频教程（完整版）： [跳转链接]()
 
 ## **视频相关连接**
-- 1.Clash官方下载地址：[点击跳转](https://clashmi.app/)
+- 1.Clash Mi官方下载地址：[点击跳转](https://clashmi.app/)
 - 2.自用机场推荐（流量150GB=18.9/月，有需要的自取）：[点击跳转](https://llgjc.org/#/register?code=Bj2hJT7i)
+- 3.Clash Mi分流配置文件：[点击跳转](https://github.com/tgl2775284503-hash/kjxv/blob/main/Clash%20Mi_peizhiwenjian.yaml)
 
 <hr class="sep">
 
